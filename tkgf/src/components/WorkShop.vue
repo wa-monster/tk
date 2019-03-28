@@ -78,7 +78,7 @@
 </template>
 
 <script>
-    import {BBT,NT,getImg} from '../api'
+    import {Candy,getImg} from '../api'
 
     export default {
       name: "WorkShop",
@@ -86,7 +86,7 @@
         return {
           show:true,
           transitionName:'',
-          local:"http://www.yangduoduo.xyz/",
+          local:process.env.API_ROOT,
           bbt1:{
             backgroundImage:"",
           },
@@ -119,19 +119,23 @@
           this.classifychange();
         }
       },
+      mounted(){
+        this.$router.afterEach((to, from, next) => {
+          window.scrollTo(0, 0);
+        });
+      },
       methods:{
-        async getBBT(){
-           let bbt =  await BBT();
+        async getCandy(candy){
+           let bbt =  await Candy(candy);
            this.list = bbt.list;
         },
-        async getNT(){
-           let nt =  await NT();
-           this.list = nt.list;
-        },
+
         async Img(){
           let data = await getImg(this.classify);
+          if(data.empty){
+            return
+          }
           this.imglist = data.list;
-					console.log(data)
           this.imglist.map(function (item){
             return item.path =item.path.replace(/\\/g,'/');
           })
@@ -145,16 +149,9 @@
             return;
           }else{
             this.Img();
-            switch (this.classify){
-              case 'bbt':
-                this.getBBT();
-                break;
-              case 'nt':
-                this.getNT();
-                break;
-              default:
-                break;
-            }
+            this.getCandy(this.classify);
+
+
           }
         }
       },

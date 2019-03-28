@@ -9,32 +9,32 @@
       </div>
       <div class="content-list">
         <div class="list-item">
-            <div>
-              <img src="../assets/about1.png" width="500" alt="">
-            </div>
+          <div class="img1">
+            <img src="../assets/about1.png" width="100%" alt="">
+          </div>
 
-            <div class="text-about">
-              <h1>创造因素 <span>Creative factors</span></h1>
-              <p>
-                食品行业是个良知行业，损害消费者的健康，就是损害自己，质量就是生命线！专注产品质量，继续为消费者把好关键的食品安全关。
-              </p>
-              <p>
-                将通过不断提升品质与附加值，来满足消费者对高品质生活的需求做企业需要团队。
-              </p>
-              <p>
-                糖果行业是一个能给人们带来愉悦的行业，带给人们的愉悦越多，价值就越高！对此我们感到无比自豪！在未来，将以带给消费者更多的愉悦享受为己任——愉悦大众，成就价值。
-              </p>
-              <p>
-                Food industry is a conscience industry, to damage the health of consumers is to damage themselves, quality is the lifeline! Focus on product quality and continue to ensure good food safety for consumers.
-              </p>
-              <p>
-                Through continuous improvement of quality and added value, to meet the needs of consumers for high-quality life to do business needs team.
-              </p>
-              <p>
-                The candy industry is an industry that can bring pleasure to people. The more pleasure it brings, the higher the value it brings. We feel very proud of this. In the future, it will be a duty to bring more pleasure to consumers.
-              </p>
-            </div>
-            <div class="clearfloat"></div>
+          <div class="text-about">
+            <h1>创造因素 <span>Creative factors</span></h1>
+            <p>
+              食品行业是个良知行业，损害消费者的健康，就是损害自己，质量就是生命线！专注产品质量，继续为消费者把好关键的食品安全关。
+            </p>
+            <p>
+              将通过不断提升品质与附加值，来满足消费者对高品质生活的需求做企业需要团队。
+            </p>
+            <p>
+              糖果行业是一个能给人们带来愉悦的行业，带给人们的愉悦越多，价值就越高！对此我们感到无比自豪！在未来，将以带给消费者更多的愉悦享受为己任——愉悦大众，成就价值。
+            </p>
+            <p>
+              Food industry is a conscience industry, to damage the health of consumers is to damage themselves, quality is the lifeline! Focus on product quality and continue to ensure good food safety for consumers.
+            </p>
+            <p>
+              Through continuous improvement of quality and added value, to meet the needs of consumers for high-quality life to do business needs team.
+            </p>
+            <p>
+              The candy industry is an industry that can bring pleasure to people. The more pleasure it brings, the higher the value it brings. We feel very proud of this. In the future, it will be a duty to bring more pleasure to consumers.
+            </p>
+          </div>
+          <div class="clearfloat"></div>
         </div>
 
         <div class="list-item">
@@ -65,8 +65,9 @@
                 Although I move forward, I advocate the latter. Nature needs balance.
               </p>
           </div>
-          <div>
-            <img src="../assets/about2.png" width="600" alt="">
+
+          <div class="img2">
+            <img src="../assets/about2.png" width="100%" alt="">
           </div>
           <div class="text-about short">
             <h1>品牌概念 <span>Brand Concept</span></h1>
@@ -91,7 +92,6 @@
         name: "About",
         data:function (){
           return {
-
           }
         },
         created(){
@@ -101,7 +101,9 @@
 
 <style scoped lang="less">
   #about{
-    width: 1400px;
+    width: 100%;
+    min-width: 800px;
+    max-width: 1400px;
     margin:0 auto;
     font-size: 15px;
 
@@ -137,21 +139,34 @@
     .content-list{
       margin-top: -100px;
       .list-item{
-
+        width: 90%;
+        max-width: 1400px;
+        min-width: 800px;
         margin: 40px;
         overflow: hidden;
         padding: 20px;
         div{
           float: left;
-
+        }
+        div.img1{
+          width: 40%;
+          min-width: 150px;
+          max-width: 500px;
+        }
+        div.img2{
+          width: 40%;
+          min-width: 120px;
+          max-width: 500px;
         }
         div:not(.text-about){
           margin-left: 50px;
         }
         .text-about{
 
-          margin-left: 150px;
-          width: 500px;
+          margin-left: 5%;
+          width: 40%;
+          max-width: 500px;
+          min-width: 300px;
           float: left;
           line-height: 1.5em;
           padding-top: 80px;
@@ -173,9 +188,18 @@
           margin: 0 50px;
         }
         .short{
+          width: 40%;
+          min-width: 300px;
           margin-top: 100px;
-          margin-left: 70px;
+          /*margin-left: 5%;*/
         }
+      }
+
+
+    }
+    @media (max-width: 950px){
+      .content-bottom{
+        display: none;
       }
     }
 

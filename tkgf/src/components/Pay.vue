@@ -115,7 +115,7 @@
           backgroundRepeat:"no-repeat",
           backgroundSize:"100% 100%",
         },
-        imgurl:'http://localhost:3000/'
+        imgurl:process.env.API_ROOT
 
       }
     },

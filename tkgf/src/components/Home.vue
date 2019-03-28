@@ -47,9 +47,10 @@
 
         <div class="preview-left">
             <span>概念产品  / <span>Conceptual product</span></span>
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+            <div class="preview-left-img1" :style="previewImg1"></div>
+            <div class="preview-left-img2" :style="previewImg2"></div>
+            <div class="preview-left-img3" :style="previewImg3"></div>
+            <div class="preview-left-brace"></div>
             <div class="view">View the details</div>
         </div>
         <div class="preview-right">
@@ -125,6 +126,24 @@
               backgroundPosition:'50% 50%',
               backgroundRepeat:"no-repeat"
             },
+            previewImg1:{
+              backgroundImage:"url('"+require('../assets/preview1.png')+"')",
+              backgroundSize:"100% 100%",
+              backgroundPosition:'50% 50%',
+              backgroundRepeat:"no-repeat"
+            },
+            previewImg2:{
+              backgroundImage:"url('"+require('../assets/preview2.png')+"')",
+              backgroundSize:"100% 100%",
+              backgroundPosition:'50% 50%',
+              backgroundRepeat:"no-repeat"
+            },
+            previewImg3:{
+              backgroundImage:"url('"+require('../assets/preview3.png')+"')",
+              backgroundSize:"100% 100%",
+              backgroundPosition:'50% 50%',
+              backgroundRepeat:"no-repeat"
+            },
           }
         },
         methods:{
@@ -182,7 +201,8 @@
       }
     }
     .preview{
-      width: 1400px;
+      width: 100%;
+      min-width: 800px;
       margin: 80px auto 0 auto;
       height: 500px;
       .preview-title{
@@ -209,18 +229,44 @@
       }
 
       .preview-left{
-        margin-top: 50px;
-        margin-left: 20px;
-        width: 650px;
+        margin-top: 60px;
+        margin-left: 50px;
+        width: 550px;
         float: left;
         text-align: center;
+        position: relative;
+        .preview-left-img1{
+          width: 150px;
+          height: 90px;
+          position: absolute;
+          top: 40px;
+          left: 100px;
+        }
+        .preview-left-img2{
+          width: 150px;
+          height: 90px;
+          position: absolute;
+          top: 60px;
+          left: 200px;
+          z-index: 5;
+        }
+        .preview-left-img3{
+          width: 150px;
+          height: 90px;
+          position: absolute;
+          top: 40px;
+          left: 310px;
+        }
+        .preview-left-brace{
+          height: 120px;
+        }
         span{
           font-family: TT;
           font-size: 20px;
         }
       }
       .preview-right{
-        margin-top: 50px;
+        margin-top: 60px;
         margin-right: 20px;
         width: 650px;
         float: right;
@@ -247,16 +293,40 @@
         line-height: 30px;
         margin: 30px auto;
       }
+      @media (max-width:1200px){
+        &{
+          height: 600px;
+          .preview-right{
+            width: 650px;
+            float: unset;
+            margin: 40px auto;
+          }
+          .preview-left{
+            width: 550px;
+            float: unset;
+            margin: 40px auto;
+          }
+        }
+
+      }
+      @media (min-width:1200px) and (max-width:1400px){
+        .preview-right{
+          width: 500px;
+        }
+      }
 
     }
 
     .gift{
       background-color: black;
       .gift-content{
-        width: 1400px;
+        width: 100%;
+        min-width: 800px;
         margin: 0 auto;
+        border: 1px solid #000;
         .gift-left{
-          margin: 100px 0px 100px 40px;
+          border: 1px solid #000;
+          margin: 100px 0px 0px 40px;
           width: 650px;
           text-align: center;
           float: left;
@@ -280,15 +350,15 @@
           }
         }
 
-
-
         .gift-right{
-          width: 650px;
+          width: 45%;
+          min-width: 500px;
           margin: 100px 40px 100px 0;
           float: right;
+          text-align: center;
           .gift-right-c{
-            margin-left: 100px;
-            float: left;
+            margin:0px 50px;
+            display: inline-block;
             text-align: center;
             .img1{
               width: 150px;
@@ -304,7 +374,6 @@
 
         }
 
-
         .gift-bottom{
           text-align: center;
           margin:10px  ;
@@ -312,6 +381,23 @@
           span{
             color: #fff;
             font-family: 'TT';
+          }
+        }
+
+        @media (max-width: 1200px){
+          .gift-left{
+            float: unset;
+            margin: 40px auto;
+          }
+          .gift-right{
+            float: unset;
+            margin: 40px auto;
+            min-width: 650px;
+          }
+        }
+        @media (min-width: 1200px) and (max-width: 1400px) {
+          .gift-left{
+            width: 40%;
           }
         }
 

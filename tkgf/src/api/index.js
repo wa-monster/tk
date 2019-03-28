@@ -14,13 +14,10 @@ export  let getSlider = function (){
   return axios.get('/Slider');
 };
 
-export let BBT = function (){
-  return axios.get('/pay/bbt');
+export let Candy = function (candy){
+  return axios.get('/pay/getCandy?candy='+candy);
 };
 
-export let NT = function (){
-  return axios.get('/pay/nt');
-};
 
 export let getImg = function (type){
   return axios.get('/pay/getimg?type='+type);
@@ -33,3 +30,7 @@ export let getproInfo = function (proName) {
 export let postProInfo = function (data) {
   return axios.post('/buy',data)
 };
+
+export let getProductClass = function(data) {
+  return axios.get('proClass')
+}

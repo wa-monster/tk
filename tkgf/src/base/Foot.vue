@@ -59,6 +59,7 @@
     .foot-line {
       border-top: 1px solid #333;
       position: relative;
+      min-width: 800px;
       margin-top: 150px;
       .foot-line-middle {
         background: #f8f7f3;
@@ -75,7 +76,8 @@
     }
 
     .foot-content {
-      width: 1400px;
+      width: 96%;
+      min-width: 800px;
       margin: 0 auto;
       .foot-news {
 
